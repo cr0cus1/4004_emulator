@@ -14,8 +14,7 @@ void print_func() {
     printf(" > ");
 }
 
-void split_line(const char *input_line) {
-    char first_word[10];
+void first_literal(const char *input_line, char *first_word) {
     for(int i = 0; input_line[i] != ' '; i++)
         first_word[i] = input_line[i];
     first_word[strlen(first_word)] = '\0';
@@ -34,7 +33,11 @@ int count_spaces(const char *input_line) {
 }
 
 void parse_line(const char *input_line) {
-    
+    char first_word[10];
+    first_literal(input_line, first_word);
+    printf("%s\n", first_word);
+    memset(first_word, 0, 10);
+
 }
 
 int main(int argc, char **argv) {
