@@ -4,8 +4,13 @@
 
 #define LINE_LEN 50
 
+int is_label(const char *first_word) {
+    if(first_word[strlen(first_word) - 2] == ',')
+        return 0;
+    return 1;
+}
+
 void print_func() {
-    printf("\n");
     printf(" > ");
 }
 
@@ -29,9 +34,7 @@ int count_spaces(const char *input_line) {
 }
 
 void parse_line(const char *input_line) {
-    int is_label = 0;
-    if(strlen(input_line) == 0 && count_spaces(input_line) == 0)
-        print_func();
+    
 }
 
 int main(int argc, char **argv) {
