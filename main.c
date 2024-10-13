@@ -14,10 +14,13 @@ void print_func() {
     printf(" > ");
 }
 
-void first_literal(const char *input_line, char *first_word) {
+char *first_literal(const char *input_line) {
+    char *first_word = malloc(20*sizeof(char)); // let's assume that max length of first literal can be max 20 bytes(in 4-bit assembler lmao xD)
     for(int i = 0; input_line[i] != ' '; i++)
         first_word[i] = input_line[i];
     first_word[strlen(first_word)] = '\0';
+
+    return first_word;
 }
 
 int count_spaces(const char *input_line) {
@@ -33,11 +36,10 @@ int count_spaces(const char *input_line) {
 }
 
 void parse_line(const char *input_line) {
-    char first_word[10];
-    first_literal(input_line, first_word);
+    char *first_word;
+    first_word = first_literal(input_line);
     printf("%s\n", first_word);
-    memset(first_word, 0, 10);
-
+    free(first_word);
 }
 
 int main(int argc, char **argv) {
