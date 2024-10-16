@@ -3,7 +3,6 @@
         "JCN", "FIM", "SRC", "FIN", "JIN",
         "JUN", "JMS", "INC", "ISZ", "ADD",
         "SUB", "LD", "XCH", "BBL", "LDM",
-        "SUB", "LD", "XCH", "BBL", "LDM",
         "WRM", "WMP", "WRR", "WR_phi", "WR1",
         "WR2", "WR3", "SBM", "RDM", "RDR",
         "ADM", "RD_phi", "RD1", "RD2", "RD3",
@@ -14,7 +13,7 @@
     };
 
     int is_command(const char *cmd) {
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 44; i++) {
             if(strcmp(cmd,cmds[i]) == 0)
                 return 0;
         }
@@ -23,6 +22,8 @@
 %}
 
 %%
+
+[A-Za-z_][A-Za-z0-9_], { printf("it's a label!"); }
 
 [A-Za-z_][A-Za-z0-9_]* { 
                             if(!is_command(yytext))
