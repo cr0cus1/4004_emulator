@@ -1,4 +1,5 @@
 %{
+
     const char *cmds[] = {
         "JCN", "FIM", "SRC", "FIN", "JIN",
         "JUN", "JMS", "INC", "ISZ", "ADD",
@@ -12,6 +13,10 @@
         NULL
     };
 
+    void split_input_line(const char *input_line) {
+        printf("%s\n", input_line);
+    }
+
     int is_command(const char *cmd) {
         printf("%s\n", cmd);
         for(int i = 0; i < 44; i++) {
@@ -24,11 +29,10 @@
 
 %%
 
-[A-Za-z_][A-Za-z0-9_], { printf("it's a label!"); }
+[A-Za-z_][A-Za-z0-9_]*, { printf("it's a label!"); }
 
 [A-Za-z_][A-Za-z0-9_]*[ \t]+[0-9]+ { 
-                            if(!is_command(yytext))
-                                printf("it's a command with arg - %s!", yytext);
+                            puts("this is line with argument!\n");
                         }
 
 [A-Za-z_][A-Za-z0-9_]* { 
