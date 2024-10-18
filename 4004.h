@@ -1,6 +1,7 @@
 #ifndef EMULATOR_H_
 #define EMULATOR_H_
 
-void init_registers();
+int init_registers();
+int run_opcode(const char *opcode, const char *arg1);
 
 #endif
