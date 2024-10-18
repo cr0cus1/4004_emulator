@@ -1,6 +1,10 @@
 %{
-#include "assembler.h"
 #include <strings.h>
+
+    struct Lexema {
+        char cmd[5];
+        char arg1[5];
+    } lexema;
 
     const char *cmds[] = {
         "JCN", "FIM", "SRC", "FIN", "JIN",
