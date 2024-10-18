@@ -16,15 +16,15 @@
     };
 
     void split_input_line(const char *input_line) {
-        int i;
+        int i, k;
         for(i = 0; input_line[i] != ' '; i++)
             lexema.cmd[i] = input_line[i];
 
-        for(; i < strlen(input_line); i++)
-            lexema.arg1[i] = input_line[i];
-            printf("%s\n", lexema.arg1);
+        for(k = 0; input_line[i] != '\0'; i++, k++)
+            lexema.arg1[k] = input_line[i];
 
         printf("%s\n", lexema.cmd);
+        printf("%s\n", lexema.arg1);
     }
 
     int is_command(const char *cmd) {
