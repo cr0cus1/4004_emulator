@@ -27,8 +27,6 @@
         for(k = 0; input_line[i] != '\0'; i++, k++)
             lexema.arg1[k] = input_line[i];
 
-        printf("%s\n", lexema.cmd);
-        printf("%s\n", lexema.arg1);
     }
 
     int is_command(const char *cmd) {
