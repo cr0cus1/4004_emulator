@@ -19,22 +19,27 @@
         NULL
     };
 
-    void split_input_line(const char *input_line) {
-        int i, k;
-        for(i = 0; input_line[i] != ' '; i++)
-            lexema.cmd[i] = input_line[i];
-
-        for(k = 0; input_line[i] != '\0'; i++, k++)
-            lexema.arg1[k] = input_line[i];
-
-    }
-
     int is_command(const char *cmd) {
         for(int i = 0; i < 44; i++) {
             if(strcmp(cmd,cmds[i]) == 0)
                 return 0;
         }
         return 1;
+    }
+
+    void split_input_line(const char *input_line) {
+        int i, k;
+
+        memset(lexema.cmd, 0, 5);
+        for(i = 0; input_line[i] != ' '; i++)
+            lexema.cmd[i] = input_line[i];
+
+        for(k = 0; input_line[i] != '\0'; i++, k++)
+            lexema.arg1[k] = input_line[i];
+
+        if(is_command(lexema.cmd))
+            printf("ERROR!\n");
+
     }
 %}
 
