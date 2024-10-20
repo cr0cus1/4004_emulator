@@ -23,10 +23,92 @@
     void run_cmd(int opcode) {
         switch (opcode) {
             case JCN:
-                printf("here will be func for JCN \n");
                 break;
             case FIM:
-                printf("here will be func for FIM \n");
+                break;
+            case SRC:
+                break;
+            case FIN:
+                break;
+            case JIN:
+                break;
+            case JUN:
+                break;
+            case JMS:
+                break;
+            case INC:
+                break;
+            case ISZ:
+                break;
+            case ADD:
+                break;
+            case SUB:
+                break;
+            case LD:
+                break;
+            case XCH:
+                break;
+            case BBL:
+                break;
+            case LDM:
+                break;
+            case WRM:
+                break;
+            case WMP:
+                break;
+            case WRR:
+                break;
+            case WR_phi:
+                break;
+            case WR1:
+                break;
+            case WR2:
+                break;
+            case WR3:
+                break;
+            case SBM:
+                break;
+            case RDM:
+                break;
+            case RDR:
+                break;
+            case ADM:
+                break;
+            case RD_phi:
+                break;
+            case RD1:
+                break;
+            case RD2:
+                break;
+            case RD3:
+                break;
+            case CLB:
+                break;
+            case CLC:
+                break;
+            case IAC:
+                break;
+            case CMC:
+                break;
+            case CMA:
+                break;
+            case RAL:
+                break;
+            case RAR:
+                break;
+            case TCC:
+                break;
+            case DAC:
+                break;
+            case TCS:
+                break;
+            case STC:
+                break;
+            case DAA:
+                break;
+            case KBP:
+                break;
+            case DCL:
                 break;
         }
     }
@@ -49,7 +131,7 @@
 
     }
 
-    void split_input_line(const char *input_line) {
+    void parse_line(const char *input_line) {
         int i, k;
 
         memset(lexema.cmd, 0, 5);
@@ -74,7 +156,7 @@
 [A-Za-z_][A-Za-z0-9_]*, { printf("it's a label!"); }
 
 [A-Za-z_][A-Za-z0-9_]*[ \t]+[0-9]+ { 
-                            split_input_line(yytext);
+                            parse_line(yytext);
                         }
 
 [A-Za-z_][A-Za-z0-9_]* { 
