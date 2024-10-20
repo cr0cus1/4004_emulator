@@ -1,5 +1,6 @@
 %{
 #include <strings.h>
+#include "assembler.h"
 
     struct Lexema {
         char cmd[5];
@@ -27,6 +28,16 @@
         return 1;
     }
 
+    int return_cmd_num(const char *cmd) {
+        int opcode_num;
+
+        for(opcode_num = 0; opcode_num < 46; opcode_num++) {
+            if(strcmp(cmd, cmds[opcode_num]) == 0)
+                return opcode_num;
+        }
+
+    }
+
     void split_input_line(const char *input_line) {
         int i, k;
 
@@ -39,6 +50,10 @@
 
         if(is_command(lexema.cmd))
             printf("ERROR!\n");
+        else {
+            int tmp = return_cmd_num(lexema.cmd);
+            printf("%d\n", tmp);
+        }
 
     }
 %}
