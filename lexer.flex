@@ -20,7 +20,18 @@
         NULL
     };
 
-    int is_command(const char *cmd) {
+    void run_cmd(int opcode) {
+        switch (opcode) {
+            case JCN:
+                printf("here will be func for JCN \n");
+                break;
+            case FIM:
+                printf("here will be func for FIM \n");
+                break;
+        }
+    }
+
+    int not_command(const char *cmd) {
         for(int i = 0; i < 44; i++) {
             if(strcmp(cmd,cmds[i]) == 0)
                 return 0;
@@ -48,11 +59,11 @@
         for(k = 0; input_line[i] != '\0'; i++, k++)
             lexema.arg1[k] = input_line[i];
 
-        if(is_command(lexema.cmd))
+        if(not_command(lexema.cmd))
             printf("ERROR!\n");
         else {
-            int tmp = return_cmd_num(lexema.cmd);
-            printf("%d\n", tmp);
+            int opcode_num = return_cmd_num(lexema.cmd);
+            run_cmd(opcode_num);
         }
 
     }
@@ -67,7 +78,7 @@
                         }
 
 [A-Za-z_][A-Za-z0-9_]* { 
-                            if(!is_command(yytext))
+                            if(!not_command(yytext))
                                 printf("it's a command - %s!", yytext);
                         }
 
