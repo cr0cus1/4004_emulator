@@ -1,4 +1,5 @@
 %{
+#include <stdlib.h>
 #include <strings.h>
 #include "assembler.h"
 %}
@@ -18,6 +19,20 @@
 
 [ \t]+ ;
 %%
-int main() {
+int main(int argc, char **argv) {
+    FILE *file;
+    if (argc > 1) {
+        file = fopen(argv[1], "r");
+        if (!file) {
+            perror("failed to open file");
+            return 1;
+        }
+    }
+
+    yyin = file;
     yylex();
+
+    if (argc > 1) {
+        fclose(yyin);
+    }
 }

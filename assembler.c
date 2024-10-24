@@ -61,78 +61,115 @@ void parse_line(const char *input_line) {
 void run_cmd(int opcode) {
      switch (opcode) {
          case JCN:
+            printf("it's JCN!\n");
             break;
          case FIM:
+            printf("it's FIM!\n");
              break;
          case SRC:
+            printf("it's SRC!\n");
              break;
          case FIN:
+            printf("it's FIN!\n");
              break;
          case JIN:
+            printf("it's JIN!\n");
              break;
          case JUN:
+            printf("it's JUN!\n");
              break;
          case JMS:
+            printf("it's JMS!\n");
              break;
          case INC:
+            printf("it's INC!\n");
              break;
          case ISZ:
+            printf("it's ISZ!\n");
              break;
          case ADD:
+            printf("it's ADD!\n");
              break;
          case SUB:
+            printf("it's SUB!\n");
              break;
          case LD:
+            printf("it's LD!\n");
              break;
          case XCH:
+            printf("it's XCH!\n");
              break;
          case BBL:
+            printf("it's JCN!\n");
              break;
          case LDM:
+            printf("it's JCN!\n");
              break;
          case WRM:
+            printf("it's JCN!\n");
              break;
          case WMP:
+            printf("it's JCN!\n");
              break;
          case WRR:
+            printf("it's JCN!\n");
              break;
          case WR_phi:
+            printf("it's JCN!\n");
              break;
          case WR1:
+            printf("it's JCN!\n");
              break;
          case WR2:
+            printf("it's JCN!\n");
              break;
          case WR3:
+            printf("it's JCN!\n");
              break;
          case SBM:
+            printf("it's JCN!\n");
              break;
          case RDM:
+            printf("it's JCN!\n");
              break;
          case RDR:
+            printf("it's JCN!\n");
              break;
          case ADM:
+            printf("it's JCN!\n");
              break;
          case RD_phi:
+            printf("it's JCN!\n");
              break;
          case RD1:
+            printf("it's JCN!\n");
              break;
          case RD2:
+            printf("it's JCN!\n");
              break;
          case RD3:
+            printf("it's JCN!\n");
              break;
          case CLB:
+            printf("it's JCN!\n");
              break;
          case CLC:
+            printf("it's JCN!\n");
              break;
          case IAC:
+            printf("it's JCN!\n");
              break;
          case CMC:
+            printf("it's JCN!\n");
              break;
          case CMA:
+            printf("it's JCN!\n");
              break;
          case RAL:
+            printf("it's JCN!\n");
              break;
          case RAR:
+            printf("it's JCN!\n");
              break;
          case TCC:
              break;
