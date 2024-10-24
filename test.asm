@@ -1,0 +1,6 @@
+LD 0
+ADD 3
+ADD 5
+XCH 2
+JUN 0
+FIN 0
