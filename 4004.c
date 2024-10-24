@@ -1,16 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "4004.h"
 
-int init_registers() {
-
+int init_cpu_env() {
     return 0;
 }
 
-int define_opcode(const char *mnemonic) {
-
-}
-
-int run_opcode(int opcode, const char *arg1) {
-
-    return 0;
+void instruction_cycle() {
+    
 }

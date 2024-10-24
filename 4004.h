@@ -6,7 +6,7 @@ typedef struct {
     int program_counter;
     int stack[3];
     int adder;
-} cpu_struct;
+} Cpu_4004;
 
 int init_cpu_env();
 void instruction_cycle();
